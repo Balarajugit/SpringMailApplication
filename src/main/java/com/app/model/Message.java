@@ -1,30 +1,43 @@
 package com.app.model;
 
 import java.util.Arrays;
-import java.util.List;
+
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 @Component
 public class Message {
 
-	
+
 	private String[] CarbonCopy;
-	
+
 	private String[] BlindCopy;
-	
-	private String Email;
-	
-	private String Subject;
-	
-	private String Message;
-	
+
+	private String email;
+
+	private String subject;
+
+	private String message;
+
 	private MultipartFile Attachment;
-	
-	
+
+
 
 	public Message() {
 		super();
+	}
+
+
+
+	public Message(String[] carbonCopy, String[] blindCopy, String email, String subject, String message,
+			MultipartFile attachment) {
+		super();
+		CarbonCopy = carbonCopy;
+		BlindCopy = blindCopy;
+		this.email = email;
+		this.subject = subject;
+		this.message = message;
+		Attachment = attachment;
 	}
 
 
@@ -54,37 +67,37 @@ public class Message {
 
 
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 
 
 
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
 
 
 
 	public String getSubject() {
-		return Subject;
+		return subject;
 	}
 
 
 
 	public void setSubject(String subject) {
-		Subject = subject;
+		this.subject = subject;
 	}
 
 
 
 	public String getMessage() {
-		return Message;
+		return message;
 	}
 
 
 
 	public void setMessage(String message) {
-		Message = message;
+		this.message = message;
 	}
 
 
@@ -104,13 +117,14 @@ public class Message {
 	@Override
 	public String toString() {
 		return "Message [CarbonCopy=" + Arrays.toString(CarbonCopy) + ", BlindCopy=" + Arrays.toString(BlindCopy)
-				+ ", Email=" + Email + ", Subject=" + Subject + ", Message=" + Message + ", Attachment=" + Attachment
+				+ ", email=" + email + ", subject=" + subject + ", message=" + message + ", Attachment=" + Attachment
 				+ "]";
 	}
 
 
 
 	
-	
-	
+
+
+
 }
